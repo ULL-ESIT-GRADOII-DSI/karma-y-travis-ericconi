@@ -22,7 +22,7 @@
   Temperatura.prototype.constructor = Temperatura;
   
   function Celsius(valor){
-    Temperatura.call(this, valor, "C");
+    Temperatura.call(this, valor, "c");
     /*Funcion para pasar de celsius a farenheit*/
     this.toFarenheit = function(){
       return (( valor * 9/5) + 32);
@@ -86,12 +86,7 @@
                           '([fF](a|ar|are|aren|arenh|arenhe|arenhei|arenheit))?           #FARENHEINT \n' +
                           '([Cc](e|el|els|elsi|elsiu|elsius))?                            #CELSIUS   \n' +
                           ')))?\\s*$', 'xi');
-                            
-                             
-                           // (([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(e|el|elv|elvi|elvin))?
-                            
-                        
-          // XRegExp('^\\s*(?<number> [-+]?\\d+(?:.\\d*)?)   # NUMERO            \n' +
+                
 /*
     Expresion por defecto
         ^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i
@@ -100,32 +95,56 @@
         
         valor = valor.match(regexp);
     
-    if (valor) {
-      var numero = valor[1],
-          tipo   = valor[2].toLowerCase();
-      
-      numero = parseFloat(numero);
-      console.log("Valor: " + numero + ", Tipo: " + tipo);
-      
-      switch (tipo) {
-        case 'c':
-          var celsius = new Celsius(numero);
-          elemento.innerHTML = celsius.toFarenheit().toFixed(2) + " Farenheit";
-          break;
-        case 'f':
-          var farenheit = new Farenheit(numero);
-          elemento.innerHTML = farenheit.toCelsius().toFixed(2) + " Celsius";
-          break;
+        if (valor) {
+          var numero = valor.number,
+          tipo = valor.type[0].toLowerCase(),
+          to = valor.to[0].toLowerCase();
+          numero = parseFloat(numero);
           
-        case 'k':
-          var kelvin = new Kelvin(numero);
-          elemento.innerHTML = kelvin.toCelsius().toFixed(2) + " Kelvin";
-          break;
-        default:
-          /* rellene este código */
-      }
-    }
-    else
-      elemento.innerHTML = "";
-  };
+          if (valor.exp) {
+             var exp = parseInt(valor.exp);
+             numero = numero * Math.pow(10, exp);
+          }
+          console.log("Valor: " + numero + ", Tipo: " + tipo);
+      
+          switch (tipo) {
+              case 'c':
+                  var celsius = new Celsius(numero);
+                  if (to == 'f'){
+                    elemento.innerHTML = celsius.toFarenheit().toFixed(2) + " Farenheit";
+                  } else if (to == 'k'){
+                    elemento.innerHTML = celsius.toKelvin().toFixed(2) + " Kelvin";
+                  } else {
+                    elemento.innerHTML = "Error! Conversión no permitida";
+                  }
+              break;
+            case 'f':
+                  var farenheit = new Farenheit(numero);
+                  if(to == 'c'){
+                    elemento.innerHTML = farenheit.toCelsius().toFixed(2) + " Celsius";
+                  } else if(to == 'k'){
+                     elemento.innerHTML = farenheit.toKelvin().toFixed(2) + " Kelvin";
+                  } else{
+                     elemento.innerHTML = "Error! Conversión no permitida";
+                  }
+            break;
+              
+            case 'k':
+                  var kelvin = new Kelvin(numero);
+                  if(to == 'c'){
+                    elemento.innerHTML = kelvin.toCelsius().toFixed(2) + " Celsius";
+                  }else if(to == 'f'){
+                    elemento.innerHTML = kelvin.toFarenheuit().toFixed(2) + " Farenheit";
+                  } 
+                  else {
+                     elemento.innerHTML = "Error! Conversión no permitida";
+                  }
+            break;
+            default:
+              elemento.innerHTML = "Error! Conversión no permitida"; 
+          }
+        } else{
+          elemento.innerHTML = "Error! Conversión no permitida"; 
+        }
+      };
 })(this);
