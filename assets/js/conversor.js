@@ -62,16 +62,43 @@
   Kelvin.prototype = new Temperatura();
   Kelvin.prototype.constructor = Kelvin;
   
+  
+  //Exportamos todas las clases creadas
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;
   exports.Farenheit = Farenheit;
-
+  exports.Kelvin = Kelvin;
+  
+  
   exports.convertir = function() {
-    var valor     = document.getElementById('convert').value,
+    var valor = document.getElementById('convert').value,
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
-        regexp    = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i;
-    valor     = valor.match(regexp);
+        regexp = XRegExp = ('^\\s*(?<number> [-+]?\\d+(?:.\\d*)?)                         # NUMERO            \n' +
+                          '\\s*(?:e(?<exp> [-+]?\\d+))?                                   # EXPONENTE         \n' +
+                          '\\s*(?<type> (                                                 # INICIO DEL TIPO   \n' +
+                          '([kK](e|el|elv|elvi|elvin))?                                   #KELVIN           \n' +
+                          '([fF](a|ar|are|aren|arenh|arenhe|arenhei|arenheit))?           #FARENHEINT \n' +
+                          '([Cc](e|el|els|elsi|elsiu|elsius))?                            #CELSIUS   \n' +
+                          '))                                                             # FIN DEL TIPO      \n' +
+                          '((?:\\s+to)?\\s+(?<to> (                                       # TO                \n' +
+                          '([kK](e|el|elv|elvi|elvin))?                                   #KELVIN             \n' +
+                          '([fF](a|ar|are|aren|arenh|arenhe|arenhei|arenheit))?           #FARENHEINT \n' +
+                          '([Cc](e|el|els|elsi|elsiu|elsius))?                            #CELSIUS   \n' +
+                          ')))?\\s*$', 'xi');
+                            
+                             
+                           // (([cCfFkK])((e|el|els|elsi|elsiu|elsius)|(e|el|elv|elvi|elvin))?
+                            
+                        
+          // XRegExp('^\\s*(?<number> [-+]?\\d+(?:.\\d*)?)   # NUMERO            \n' +
+/*
+    Expresion por defecto
+        ^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i
+*/
+        
+        
+        valor = valor.match(regexp);
     
     if (valor) {
       var numero = valor[1],
@@ -89,7 +116,11 @@
           var farenheit = new Farenheit(numero);
           elemento.innerHTML = farenheit.toCelsius().toFixed(2) + " Celsius";
           break;
-        
+          
+        case 'k':
+          var kelvin = new Kelvin(numero);
+          elemento.innerHTML = kelvin.toCelsius().toFixed(2) + " Kelvin";
+          break;
         default:
           /* rellene este código */
       }
