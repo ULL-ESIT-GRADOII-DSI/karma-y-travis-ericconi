@@ -87,7 +87,7 @@
                           '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
                           '(c|ce|cel|cels|celsi|celsiu|celsius)| # Cels \n' +
                           '(k|ke|kel|kelv|kelvi|kelvin) \n' +
-                          ')))?\\s*$', 'xi');
+                          ')))\\s*$', 'xi');
                 
 /*
     Expresion por defecto
