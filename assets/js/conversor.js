@@ -56,10 +56,10 @@
     Temperatura.call(this, valor, "k");
     this.toCelsius = function(){
       return (valor - 273.15);
-    }
+    };
     this.toFahrenheit = function(){
       return(valor * 9/5 - 459.67);  
-    }
+    };
   }
   Kelvin.prototype = new Temperatura();
   Kelvin.prototype.constructor = Kelvin;
@@ -76,15 +76,15 @@
     var valor = document.getElementById('convert').value,
         elemento  = document.getElementById('converted'),
         /* Extienda la RegeExp a la especificación. use una XRegExp */
-        regexp = XRegExp('^\\s*(?<number> [-+]?\\d+(?:.\\d*)?)                         # NUMERO            \n' +
-                          '\\s*(?:e(?<exp> [-+]?\\d+))?                                   # EXPONENTE         \n' +
+        regexp = XRegExp('^\\s*(?<number> [-+]?\\d+(?:.\\d*)?)                                    # NUMERO            \n' +
+                          '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                           '\\s*(?<type> ('                                                                     +        
-                          '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)| # Fa \n' +
-                          '(c|ce|cel|cels|celsi|celsiu|celsius)|                  # Celsius\n' +
+                          '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
+                          '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius\n' +
                           '(k|ke|kel|kelv|kelvi|kelvin)                     \n' +
-                          '))                                                             # FIN DEL TIPO      \n' +
-                          '((?:\\s+to)?\\s+(?<to> (                                       # TO                \n' +
-                          '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)| # Far \n' +
+                          '))                                                                     # FIN DEL TIPO      \n' +
+                          '((?:\\s+to)?\\s+(?<to> (                                               # TO                \n' +
+                          '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
                           '(c|ce|cel|cels|celsi|celsiu|celsius)| # Cels \n' +
                           '(k|ke|kel|kelv|kelvi|kelvin) \n' +
                           ')))?\\s*$', 'xi');
@@ -104,11 +104,7 @@
 
           if(to){
             to = to[0].toLowerCase();
-          } 
-
-      
-        
-        
+          }
           if (valor.exp) {
              var exp = parseInt(valor.exp);
              numero = numero * Math.pow(10, exp);
@@ -143,7 +139,7 @@
                     elemento.innerHTML = kelvin.toCelsius().toFixed(2) + " Celsius";
                   }else if(to == 'f'){
                     elemento.innerHTML = kelvin.toFahrenheit().toFixed(2) + " Fahrenheit";
-                  } 
+                  }
                   else {
                      elemento.innerHTML = "Error! Conversión no permitida";
                   }
@@ -154,5 +150,5 @@
         } else{
           elemento.innerHTML = "Error! Conversión no permitida"; 
         }
-      };
+      }
 })(this);
