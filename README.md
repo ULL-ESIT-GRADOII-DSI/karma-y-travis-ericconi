@@ -19,5 +19,5 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 **Página de los autor**
 
-* [Constanza](alu0100673647.github.io)
-* [Eric](alu0100786330.github.io)
+* [Constanza](http://alu0100673647.github.io)
+* [Eric](http://alu0100786330.github.io)
