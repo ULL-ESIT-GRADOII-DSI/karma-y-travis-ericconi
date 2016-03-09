@@ -12,10 +12,11 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 **Repositorio GitHuB donde se realizó la práctica**
 
 * [Donde se trabajó](https://github.com/alu0100786330/object-oriented-programming-in-js-ericconi-dsi-1516)
+* [Organización](http://github.com/ull-esit-gradoii-dsi/object-oriented-programming-in-js-ericconi-dsi-1516/)
 
 **Página de la práctica**
 
-* [Organización](http://ull-esit-gradoii-dsi.github.io/object-oriented-programming-in-js-ericconi-dsi-1516/)
+* [Web](http://ull-esit-gradoii-dsi.github.io/object-oriented-programming-in-js-ericconi-dsi-1516/)
 
 **Página de los autor**
 
