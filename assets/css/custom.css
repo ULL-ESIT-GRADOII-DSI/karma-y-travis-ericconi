@@ -29,8 +29,17 @@ span {
     color: green;
 }
 
+
 @media (max-width: 550px) {
     footer {
         text-align: center;
     }
+}
+
+
+#conv{
+    text-align: center;
+    background-color: #222;
+    color: #FFF;
+    border-radius: 5em;
 }
