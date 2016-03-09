@@ -7,16 +7,18 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 **Enlace al campus virtual**
 
+* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=177211)
 
-**Repositorio GitHuB**
+**Repositorio GitHuB donde se realizó la práctica**
 
-* [](https://github.com/alu0100786330/object-oriented-programming-in-js-ericconi-dsi-1516)
+* [Donde se trabajó](https://github.com/alu0100786330/object-oriented-programming-in-js-ericconi-dsi-1516)
+* [Organización](http://github.com/ull-esit-gradoii-dsi/object-oriented-programming-in-js-ericconi-dsi-1516/)
 
 **Página de la práctica**
 
-* [Web]()
+* [Web](http://ull-esit-gradoii-dsi.github.io/object-oriented-programming-in-js-ericconi-dsi-1516/)
 
-**Página del autor**
+**Página de los autor**
 
-* [Web Author]()
-
+* [Constanza](http://alu0100673647.github.io)
+* [Eric](http://alu0100786330.github.io)
