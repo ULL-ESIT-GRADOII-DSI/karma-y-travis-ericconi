@@ -150,5 +150,5 @@
         } else{
           elemento.innerHTML = "Error! Conversión no permitida"; 
         }
-      }
+      };
 })(this);
