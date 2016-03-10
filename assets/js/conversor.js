@@ -7,7 +7,7 @@
 
   function Medida(valor,tipo)  {
     this.valor = valor || 32;
-    this.tipo = tipo || "c";
+    this.tipo = tipo || "f";
 
   }
 
@@ -72,7 +72,7 @@
   exports.Fahrenheit = Fahrenheit;
   exports.Kelvin = Kelvin;
 
-  var regexp = XRegExp('^\\s*(?<number> [-+]?\\d+(?:.\\d*)?)                                # NUMERO            \n' +
+  var regexp = XRegExp('^\\s*(?<number> [-+]?\\d+(\\.\\d*)?)                                # NUMERO            \n' +
                     '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                     '\\s*(?<type> ('                                                                     +
                     '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
