@@ -7,7 +7,7 @@
 
   function Medida(valor,tipo)  {
     this.valor = valor || 32;
-    this.tipo = tipo || "f";
+    this.tipo = tipo || "c";
 
   }
 
