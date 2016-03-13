@@ -7,16 +7,16 @@ Este repositorio aloja la práctica de Eliminación del Switch Smell del código
 
 **Enlace al campus virtual**
 
-* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=177211)
+* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=178103)
 
 **Repositorio GitHuB donde se realizó la práctica**
 
-* [Donde se trabajó](https://github.com/alu0100786330/object-oriented-programming-in-js-ericconi-dsi-1516)
-* [Organización](http://github.com/ull-esit-gradoii-dsi/object-oriented-programming-in-js-ericconi-dsi-1516/)
+* [Donde se trabajó](https://github.com/alu0100786330/eliminacion-del-switch-smell-ericconi)
+* [Organización](https://github.com/ULL-ESIT-GRADOII-DSI/eliminacion-del-switch-smell-ericconi)
 
 **Página de la práctica**
 
-* [Web](http://ull-esit-gradoii-dsi.github.io/object-oriented-programming-in-js-ericconi-dsi-1516/)
+* [Web](http://ull-esit-gradoii-dsi.github.io/eliminacion-del-switch-smell-ericconi/)
 
 **Página de los autor**
 
