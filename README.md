@@ -7,7 +7,7 @@ Este repositorio aloja la práctica de Eliminación del Switch Smell del código
 
 **Enlace al campus virtual**
 
-* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=178103)
+* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=180154)
 
 **Repositorio GitHuB donde se realizó la práctica**
 
