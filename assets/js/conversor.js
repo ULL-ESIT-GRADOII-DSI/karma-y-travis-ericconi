@@ -5,72 +5,6 @@
     /* ademas de new Medida(45.2, "Km") */
 
 
-  function Medida(valor,tipo)  {
-    this.valor = valor || 32;
-    this.tipo = tipo || "c";
-
-  }
-
-  Temperatura.prototype = new Medida(); // herencia
-
-  function Temperatura(valor,tipo){
-    Medida.call(this,valor,tipo);
-    /* tipo es opcional. Debería admitir new Medida("45.2 F") */
-  }// fin temperatura
-
-
-
-  Temperatura.prototype.constructor = Temperatura;
-
-  function Celsius(valor){
-    Temperatura.call(this, valor, "c");
-    /*Funcion para pasar de celsius a Fahrenheit*/
-    this.toFahrenheit = function(){
-      return (( valor * 9/5) + 32);
-    };
-    /*Funcion para pasar de celsius a kelvin*/
-    this.toKelvin = function(){
-      return (valor + 273.15);
-    };
-
-  } // fin Celsius
-
-  Celsius.prototype = new Temperatura();
-  Celsius.prototype.constructor = Celsius;
-
-  function Fahrenheit(valor){
-    Temperatura.call(this, valor, "f");
-    /*Funcion para pasar de  Fahrenheit a celsius*/
-    this.toCelsius = function(){
-      return((valor - 32) * 5/9);
-    };
-    /*Funcion para pasar de Fahrenheit a kelvin*/
-    this.toKelvin = function(){
-      return((valor + 459.67) * 5/9);
-    };
-  }
-  Fahrenheit.prototype = new Temperatura();
-  Fahrenheit.prototype.constructor = Fahrenheit;
-
-
-  function Kelvin(valor){
-    Temperatura.call(this, valor, "k");
-    this.toCelsius = function(){
-      return (valor - 273.15);
-    };
-    this.toFahrenheit = function(){
-      return(valor * 9/5 - 459.67);
-    };
-  }
-  Kelvin.prototype = new Temperatura();
-  Kelvin.prototype.constructor = Kelvin;
-
-
-  //Exportamos todas las clases creadas
-  exports.Temperatura = Temperatura;
-  exports.Celsius = Celsius;
-  exports.Fahrenheit = Fahrenheit;
-  exports.Kelvin = Kelvin;
 
   var regexp = XRegExp('^\\s*(?<number> [-+]?\\d+(\\.\\d*)?)                                # NUMERO            \n' +
                     '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
@@ -86,6 +20,7 @@
                     ')))\\s*$', 'xi');
 
 
+      
   exports.convertir = function() {
     var valor = document.getElementById('convert').value,
         elemento  = document.getElementById('converted');
