@@ -1,4 +1,4 @@
-  "use strict";
+"use strict";
   
 
 function Medida(valor,tipo)  {
@@ -9,17 +9,19 @@ function Medida(valor,tipo)  {
 
 Medida.match = function(valor){
   
-  var regexp = XRegExp('^\\s*(?<numero> [-+]?\\d+(\\.\\d*)?)                                # NUMERO            \n' +
+  var regexp = XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                     '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                     '\\s*(?<tipo> ('                                                                     +
                     '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
                     '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius\n' +
-                    '(k|ke|kel|kelv|kelvi|kelvin)                     \n' +
+                    '(k|ke|kel|kelv|kelvi|kelvin)                    \n' +
                     '))                                                                     # FIN DEL TIPO      \n' +
+                    
+                    
                     '((?:\\s+to)?\\s+(?<destino> (                                               # TO                \n' +
                     '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
                     '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius \n' +
-                    '(k|ke|kel|kelv|kelvi|kelvin) \n' +
+                    '(k|ke|kel|kelv|kelvi|kelvin)  \n' +
                     ')))\\s*$', 'xi');
   
    
@@ -41,8 +43,13 @@ Medida.match = function(valor){
     
     if (match) {
       var numero = parseFloat(match.numero),
-          tipo   = match.tipo,
-          destino = match.destino;
+          tipo   = match.tipo[0].toLowerCase(),
+          destino = match.destino[0].toLowerCase();
+          
+      if (match.exp) {
+         var exp = parseInt(match.exp);
+         numero = numero * Math.pow(10, exp);
+      }
   
       try {
         var source = new measures[tipo](numero);  // new Fahrenheit(32)
