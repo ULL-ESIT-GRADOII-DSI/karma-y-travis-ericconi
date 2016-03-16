@@ -1,16 +1,16 @@
 "use strict";
-  
-
-function Medida(valor,tipo)  {
-   var constr = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+var medida_valor = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
                         '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
                         '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius\n' +
                         '(k|ke|kel|kelv|kelvi|kelvin)                    \n' +
-                        '))','xi');
+                        '))','xi');  
 
-   var verificar = XRegExp.exec(valor, constr);
+function Medida(valor,tipo)  {
+   
+
+   var verificar = XRegExp.exec(valor, medida_valor);
 
   if(verificar){
     this.valor = verificar.numero;
