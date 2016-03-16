@@ -1,8 +1,7 @@
 "use strict";
   
 
-function Medida(valor,tipo)  {
-   var constr = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+var valor_medida = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
                         '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
@@ -10,7 +9,10 @@ function Medida(valor,tipo)  {
                         '(k|ke|kel|kelv|kelvi|kelvin)                    \n' +
                         '))','xi');
 
-   var verificar = XRegExp.exec(valor, constr);
+
+function Medida(valor,tipo)  {
+  
+  var verificar = XRegExp.exec(valor, valor_medida);
 
   if(verificar){
     this.valor = verificar.numero;
