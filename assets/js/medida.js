@@ -5,7 +5,7 @@
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
                         '[a-zA-Z]+                   \n' +
-                        '))','x');
+                        '))','xi');
 
 
 function Medida(valor,tipo)  {
@@ -23,7 +23,7 @@ function Medida(valor,tipo)  {
   }
 
 };
-//var x = new Medida("32F");
+var x = new Medida("32F");
 
 Medida.match = function(valor){
   
@@ -36,7 +36,7 @@ Medida.match = function(valor){
                     
                     '((?:\\s+to)?\\s+(?<destino> (                                               # TO                \n' +
                     '[a-zA-Z]+   \n' +
-                    ')))\\s*$', 'x');
+                    ')))\\s*$', 'xi');
   
    
   return XRegExp.exec(valor, regexp);
