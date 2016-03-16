@@ -2,9 +2,7 @@
 var medida_valor = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
-                        '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
-                        '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius\n' +
-                        '(k|ke|kel|kelv|kelvi|kelvin)                    \n' +
+                        '[a-z]+                                                                              \n' +
                         '))','xi');  
 
 function Medida(valor,tipo)  {
@@ -30,17 +28,13 @@ Medida.match = function(valor){
   var regexp = XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                     '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                     '\\s*(?<tipo> ('                                                                     +
-                    '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
-                    '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius\n' +
-                    '(k|ke|kel|kelv|kelvi|kelvin)                    \n' +
+                    '[a-z]+                                                                    \n' +
                     '))                                                                     # FIN DEL TIPO      \n' +
                     
                     
                     '((?:\\s+to)?\\s+(?<destino> (                                               # TO                \n' +
-                    '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
-                    '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius \n' +
-                    '(k|ke|kel|kelv|kelvi|kelvin)  \n' +
-                    ')))\\s*$', 'xi');
+                    '([a-z]+                                                                                  \n' +
+                    '))))\\s*$', 'xi');
   
    
   return XRegExp.exec(valor, regexp);
