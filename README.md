@@ -2,7 +2,7 @@
 
 Este repositorio aloja la práctica de Eliminación del Switch Smell del código que incluye conversión de tipos, realizado con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
 
-
+![gif](/assets/images/ejemplo.gif)
 
 
 **Enlace al campus virtual**
