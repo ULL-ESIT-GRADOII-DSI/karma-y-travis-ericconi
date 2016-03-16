@@ -2,10 +2,28 @@
   
 
 function Medida(valor,tipo)  {
-    this.valor = valor || 32;
-    this.tipo = tipo || "c";
+   var constr = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+                        '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
+                        '\\s*(?<tipo> ('                                                                     +
+                        '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
+                        '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius\n' +
+                        '(k|ke|kel|kelv|kelvi|kelvin)                    \n' +
+                        '))','xi');
+
+   var verificar = XRegExp.exec(valor, constr);
+
+  if(verificar){
+    this.valor = verificar.numero;
+    this.tipo = verificar.tipo;
+  }
+  else{
+    this.valor = valor;
+    this.tipo = tipo;
 
   }
+
+};
+var x = new Medida("32F");
 
 Medida.match = function(valor){
   
