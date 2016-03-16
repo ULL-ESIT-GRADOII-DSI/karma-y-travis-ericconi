@@ -4,8 +4,8 @@
  var valor_medida = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
-                        '[a-z]+                   \n' +
-                        '))','xi');
+                        '[a-zA-Z]+                   \n' +
+                        '))','x');
 
 
 function Medida(valor,tipo)  {
@@ -30,13 +30,13 @@ Medida.match = function(valor){
   var regexp = XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                     '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                     '\\s*(?<tipo> ('                                                                     +
-                    ' [a-z]+                                                                   \n' +                                        
+                    ' [a-zA-Z]+                                                                   \n' +                                        
                     '))                                                                     # FIN DEL TIPO      \n' +
                     
                     
                     '((?:\\s+to)?\\s+(?<destino> (                                               # TO                \n' +
-                    '[a-z]+   \n' +
-                    ')))\\s*$', 'xi');
+                    '[a-zA-Z]+   \n' +
+                    ')))\\s*$', 'x');
   
    
   return XRegExp.exec(valor, regexp);
