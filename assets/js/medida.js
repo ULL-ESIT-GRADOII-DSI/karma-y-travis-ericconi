@@ -1,16 +1,16 @@
 "use strict";
   
 
- var valor_medida = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+function Medida(valor,tipo)  {
+   var constr = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
-                        '[a-zA-Z]+                   \n' +
+                        '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
+                        '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius\n' +
+                        '(k|ke|kel|kelv|kelvi|kelvin)                    \n' +
                         '))','xi');
 
-
-function Medida(valor,tipo)  {
-  
-   var verificar = XRegExp.exec(valor, valor_medida);
+   var verificar = XRegExp.exec(valor, constr);
 
   if(verificar){
     this.valor = verificar.numero;
@@ -30,12 +30,16 @@ Medida.match = function(valor){
   var regexp = XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                     '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                     '\\s*(?<tipo> ('                                                                     +
-                    ' [a-zA-Z]+                                                                   \n' +                                        
+                    '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
+                    '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius\n' +
+                    '(k|ke|kel|kelv|kelvi|kelvin)                    \n' +
                     '))                                                                     # FIN DEL TIPO      \n' +
                     
                     
                     '((?:\\s+to)?\\s+(?<destino> (                                               # TO                \n' +
-                    '[a-zA-Z]+   \n' +
+                    '(f|fa|fah|fahr|fahre|fahren|fahrenh|fahrenhe|fahrenhei|fahrenheit)|    # FAHRENHEIT \n' +
+                    '(c|ce|cel|cels|celsi|celsiu|celsius)|                                  # Celsius \n' +
+                    '(k|ke|kel|kelv|kelvi|kelvin)  \n' +
                     ')))\\s*$', 'xi');
   
    
