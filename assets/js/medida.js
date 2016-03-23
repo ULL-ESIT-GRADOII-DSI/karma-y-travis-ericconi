@@ -1,5 +1,6 @@
+(function(exports) {
 "use strict";
-var medida_valor = XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+var medida_valor = new XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
                         '[a-z]+                                                                              \n' +
@@ -22,7 +23,7 @@ function Medida(valor,tipo)  {
 
 };
 var x = new Medida("32F");
- var regexp = XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+ var regexp = new XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                     '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                     '\\s*(?<tipo> ('                                                                     +
                     '[a-z]+                                                                    \n' +
@@ -44,9 +45,9 @@ Medida.match = function(valor){
     var measures = Medida.measures;
     
     
-    measures.c = Celsius;
-    measures.f = Fahrenheit;
-    measures.k = Kelvin;
+   // measures.c = Celsius;
+   // measures.f = Fahrenheit;
+   // measures.k = Kelvin;
     
     var match = Medida.match(valor);
     
@@ -72,3 +73,5 @@ Medida.match = function(valor){
     else
       return "Introduzca una temperatura valida: 330e-1 F to C";
   };
+  exports.Medida = Medida;
+})(this);
