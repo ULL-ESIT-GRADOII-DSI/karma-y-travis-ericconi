@@ -22,10 +22,7 @@ function Medida(valor,tipo)  {
 
 };
 var x = new Medida("32F");
-
-Medida.match = function(valor){
-  
-  var regexp = XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+ var regexp = XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                     '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                     '\\s*(?<tipo> ('                                                                     +
                     '[a-z]+                                                                    \n' +
@@ -36,7 +33,7 @@ Medida.match = function(valor){
                     '([a-z]+                                                                                  \n' +
                     '))))\\s*$', 'xi');
   
-   
+Medida.match = function(valor){
   return XRegExp.exec(valor, regexp);
 }
   
