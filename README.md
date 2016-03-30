@@ -1,13 +1,14 @@
 # Testeando frontend JavaScript usando mocha, chai y sinon
 
-Este repositorio aloja la práctica de Eliminación del Switch Smell del código que incluye conversión de tipos, realizado con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
+Este repositorio aloja la práctica de Mocha y Chai el código que incluye conversión de tipos, realizado con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
+Y además un conjunto de puebas con mocha-chai.
 
 ![gif](/assets/images/ejemplo.gif)
 
 
 **Enlace al campus virtual**
 
-* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=180154)
+* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=182938)
 
 **Repositorio GitHuB donde se realizó la práctica**
 
