@@ -33,8 +33,8 @@ describe("Medida", function () {
 /* =============== Clase Temperatura =============== */
 
 describe("Clase Temperatura", function () {
-  describe("constructor temperatura", function() {
-    it("deberia tener un constructor", function() {
+  describe("constructor", function() {
+    it("Existe un constructor", function() {
       var temperatura = new Temperatura (32, 'c');
       expect(temperatura.valor).to.equal(32);
     });
