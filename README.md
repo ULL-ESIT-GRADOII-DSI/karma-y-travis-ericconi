@@ -1,22 +1,23 @@
-# Práctica Eliminación del Switch Smell
+# Testeando frontend JavaScript usando mocha, chai y sinon
 
-Este repositorio aloja la práctica de Eliminación del Switch Smell del código que incluye conversión de tipos, realizado con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
+Este repositorio aloja la práctica de Mocha y Chai el código que incluye conversión de tipos, realizado con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
+Y además un conjunto de puebas con mocha-chai.
 
 ![gif](/assets/images/ejemplo.gif)
 
 
 **Enlace al campus virtual**
 
-* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=180154)
+* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=182938)
 
 **Repositorio GitHuB donde se realizó la práctica**
 
-* [Donde se trabajó](https://github.com/alu0100786330/eliminacion-del-switch-smell-ericconi)
-* [Organización](https://github.com/ULL-ESIT-GRADOII-DSI/eliminacion-del-switch-smell-ericconi)
+* [Donde se trabajó](https://github.com/alu0100786330/mocha-y-chai-ericconi)
+* [Organización](https://github.com/ULL-ESIT-GRADOII-DSI/mocha-y-chai-ericconi)
 
 **Página de la práctica**
 
-* [Web](http://ull-esit-gradoii-dsi.github.io/eliminacion-del-switch-smell-ericconi/)
+* [Web](http://ull-esit-gradoii-dsi.github.io/mocha-y-chai-ericconi/)
 
 **Página de los autor**
 
