@@ -103,4 +103,5 @@ Kelvin.prototype.toFahrenheit = function () {
     exports.Fahrenheit = Fahrenheit;
     exports.Celsius = Celsius;
     exports.Kelvin = Kelvin;
+
 })(this);
