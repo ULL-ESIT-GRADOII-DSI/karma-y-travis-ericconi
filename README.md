@@ -18,6 +18,7 @@ Y además un conjunto de puebas con mocha-chai.
 **Página de la práctica**
 
 * [Web](http://ull-esit-gradoii-dsi.github.io/mocha-y-chai-ericconi/)
+* [Pruebas](http://ull-esit-gradoii-dsi.github.io/mocha-y-chai-ericconi/vendor/test.html)
 
 **Página de los autor**
 

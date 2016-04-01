@@ -25,10 +25,7 @@ describe("Medida", function () {
       expect(medida.valor).to.equal('23');
       expect(medida.tipo).to.equal('C');
    });
-   it("Debe devolver una expresion", function() {
-       var medida = new Medida(32, 'c');
-       expect(medida.match().valor).to.equal('c');
-   })
+   
     
   });
 });
