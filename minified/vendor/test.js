@@ -25,11 +25,9 @@ describe("Medida", function () {
       expect(medida.valor).to.equal('23');
       expect(medida.tipo).to.equal('C');
    });
-   
     
   });
 });
-
 
 
 /* =============== Clase Temperatura =============== */

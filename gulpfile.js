@@ -7,25 +7,27 @@ clean = require('gulp-clean')
 gulp.task('default', ['minify-js', 'minify-css', 'minify-html'], function() {
 });
 
-gulp.task('minify-js', function() {
-  gulp.src(['vendor/*.js', '*.js', 'assets/js/*.js'])
-    .pipe(minify({
-        exclude: ['tasks'],
-        ignoreFiles: ['.combo.js', '-min.js']
-    }))
-    .pipe(gulp.dest('minified'))
-});
+
 
 gulp.task('minify-css', function() {
   return gulp.src(['assets/css/*.css','vendor/*.css'])
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('minified'));
+    .pipe(gulp.dest('minified/css'));
 })
 
 gulp.task('minify-html', function() {
   return gulp.src('*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('minified'))
+});
+
+gulp.task('minify-js', function() {
+  gulp.src(['vendor/*.js', '*.js', 'assets/js/*.js'])
+    .pipe(minify({
+        exclude: ['tasks'],
+        ignoreFiles: ['.combo.js', '-min.js']
+    }))
+    .pipe(gulp.dest('minified/vendor'))
 });
 
 gulp.task('clean', function () {
