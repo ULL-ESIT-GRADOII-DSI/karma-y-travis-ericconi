@@ -1,12 +1,12 @@
 
 
-Práctica: Karma y Travis
+** Práctica: Karma y Travis
 
-Requisitos
+** Requisitos
 
 * Partiendo de la práctica de Mocha, Chai y Sinon añada ejecución de las pruebas con Karma y Travis.
 * Añada a su README.md un badge Travis como este: Build Status indicando el estado de las pruebas en Travis y enlazando a las mismas.
-*Requisito opcional: Use el plugin gulp-gh-pages para simplificar el despliegue en gh-pages. Vea la sección El plugin gulp-gh-pages
+* Requisito opcional: Use el plugin gulp-gh-pages para simplificar el despliegue en gh-pages. Vea la sección El plugin gulp-gh-pages
 ![gif](/assets/images/ejemplo.gif)
 
 
