@@ -1,10 +1,10 @@
 (function(exports) {
 "use strict";
-var medida_valor = new XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+var medida_valor = '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
                         '[a-z]+                                                                              \n' +
-                        '))','xi');
+                        '))';
 
 function Medida(valor,tipo)  {
 
@@ -13,29 +13,22 @@ function Medida(valor,tipo)  {
     this.tipo = tipo;
   }
   else{
-    var verificar = XRegExp.exec(valor, medida_valor);
+    var verificar = XRegExp.exec(valor, XRegExp(medida_valor,'xi'));
     if(verificar){
       this.valor = verificar.numero;
       this.tipo = verificar.tipo;
     }
   }
+}
 
-};
-var x = new Medida("32F");
-var regexp = new XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
-                    '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
-                    '\\s*(?<tipo> ('                                                                     +
-                    '[a-z]+                                                                    \n' +
-                    '))                                                                     # FIN DEL TIPO      \n' +
-
-
+var regexp = 
                     '((?:\\s+to)?\\s+(?<destino> (                                               # TO                \n' +
                     '([a-z]+                                                                                  \n' +
-                    '))))\\s*$', 'xi');
+                    '))))\\s*$';
 
 Medida.match = function(valor){
-  return XRegExp.exec(valor, regexp);
-}
+  return XRegExp.exec(valor, XRegExp(medida_valor + regexp,'xi'));
+};
 
 Medida.measures = {};
 
