@@ -47,7 +47,7 @@ describe("Medida", function () {
         var valor = Medida.convertir('330f to j');
         expect(valor).to.equal('Desconozco como convertir desde "f" hasta "j"');
       });
-    it("Debería indicar que se introduzca una temperatura correcta", function () {
+    it("Debería indicar que se introduzca una temperatura correcta(EDGE)", function () {
         var valor = Medida.convertir('330fj');
         expect(valor).to.equal('Introduzca una temperatura valida: 330e-1 F to C');
       });
@@ -157,7 +157,7 @@ var sandbox;
 
 
 describe("Sinon", function() {
-    it("Error al introducir mal la temperatura", function() {
+    it("Error al introducir mal la temperatura (EDGE)", function() {
       (Medida.convertir('32f j'));
       sinon.assert.notCalled(console.log);
       sinon.assert.calledOnce(console.error);
