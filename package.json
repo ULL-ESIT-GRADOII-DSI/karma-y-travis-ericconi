@@ -4,8 +4,12 @@
   "description": "Conversor javascript de tipos",
   "main": "conversor.js",
   "scripts": {
-    "test": "mocha test",
+   
+    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
     "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o test/chai.js"
+    
+   
+}
   },
   "repository": {
     "type": "git",
@@ -25,6 +29,7 @@
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.4",
     "gulp-htmlmin": "^1.3.0",
+    "karma": "~0.12",
     "gulp-minify": "0.0.7"
   }
 }
