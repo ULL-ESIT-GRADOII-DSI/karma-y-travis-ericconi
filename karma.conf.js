@@ -37,7 +37,18 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'test.html': ['html2js']
     },
+    
+    plugins: [
+      'karma-mocha',
+      'karma-chai',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-html2js-preprocessor',
+      'karma-phantomjs-launcher',
+      'karma-safari-launcher'
+      ],
 
 
     // test results reporter to use
@@ -66,23 +77,25 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     
-
-     customLaunchers: {
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
+    customLaunchers: {
+        Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
     },
+ 
     
-     browsers: ['Chrome_travis_ci','PhantomJS','Firefox'],
+     browsers: ['Chrome','PhantomJS','Firefox'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
-
+    
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
- 
-}
+  });
+  if (process.env.TRAVIS) {
+    config.browsers = ['Chrome_travis_ci','PhantomJS','Firefox'];
+  }
+};
