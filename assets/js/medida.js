@@ -44,6 +44,7 @@ Medida.measures = {};
 
       if (match.exp) {
          var exp = parseInt(match.exp);
+         console.log("Reconocido exponente");
          numero = numero * Math.pow(10, exp);
       }
 
@@ -53,6 +54,7 @@ Medida.measures = {};
         return source[target]().valor.toFixed(2) + " "+target; // "0 Celsius"
       }
       catch(err) {
+        console.error('Desconozco como convertir desde "'+tipo+'" hasta "'+destino+'"');
         return 'Desconozco como convertir desde "'+tipo+'" hasta "'+destino+'"';
       }
     }

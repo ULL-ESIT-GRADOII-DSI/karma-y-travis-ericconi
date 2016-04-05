@@ -1,6 +1,11 @@
 
 var expect = chai.expect;
 
+
+
+
+
+
 /* =============== Clase Medida =============== */
 
 describe("Medida", function () {
@@ -48,6 +53,8 @@ describe("Medida", function () {
       });
   
   });
+  
+ 
 });
 
 
@@ -131,3 +138,36 @@ describe("Kelvin", function () {
   });
 });
 
+
+var sandbox;
+
+  beforeEach(function() {
+    // create a sandbox
+    sandbox = sinon.sandbox.create();
+
+    // stub some console methods
+    sandbox.stub(window.console, "log");
+    sandbox.stub(window.console, "error");
+  });
+
+  afterEach(function() {
+    // restore the environment as it was before
+    sandbox.restore();
+  });
+
+
+describe("Sinon", function() {
+    it("Error al introducir mal la temperatura", function() {
+      (Medida.convertir('32f j'));
+      sinon.assert.notCalled(console.log);
+      sinon.assert.calledOnce(console.error);
+      sinon.assert.calledWithExactly(console.error, 'Desconozco como convertir desde "f" hasta "j"')
+    });
+     it("Reconoce exponente", function() {
+      (Medida.convertir('330e-1 F to C'));
+      sinon.assert.calledOnce(console.log);
+      sinon.assert.notCalled(console.error);
+      sinon.assert.calledWithExactly(console.log, 'Reconocido exponente')
+    });
+
+  });
