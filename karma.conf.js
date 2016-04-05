@@ -24,6 +24,7 @@ module.exports = function(config) {
       'vendor/mocha.js',
       'vendor/sinon.js',
       'vendor/blanket.js',
+      'vendor/test.html',
       'vendor/test.js'
     ],
 
@@ -64,16 +65,8 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-     browsers: ['PhantomJS'],
+     browsers: ['Chrome','PhantomJS'],
 
-    customLaunchers: {
-      chromeTravisCI: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
-
-  
 
 
     // Continuous Integration mode
