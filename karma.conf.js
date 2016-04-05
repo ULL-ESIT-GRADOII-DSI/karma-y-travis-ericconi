@@ -15,18 +15,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'xregexp-all.js',
       'assets/js/main.js',
       'assets/js/medida.js',
       'assets/js/temperature.js',
-      'vendor/test.js',
       'vendor/chai.js',
       'vendor/mocha.css',
       'vendor/mocha.js',
       'vendor/sinon.js',
-      'vendor/blanket.min.js',
-      'vendor/mocha-blanket.js',
-      'vendor/sinon-1.7.1.js',
-      'xregexp.js'
+      'vendor/blanket.js',
+      'vendor/test.js'
     ],
 
 
@@ -66,7 +64,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'PhantomJS'],
+    browsers: ['PhantomJS', 'Chrome_travis_ci'],
 
 
     // Continuous Integration mode
