@@ -1,12 +1,8 @@
 
 
-## Práctica: Karma y Travis
+## Práctica: Karma y Travis [![Build Status](https://travis-ci.org/alu0100786330/karma-y-travis-ericconi.svg?branch=master)](https://travis-ci.org/alu0100786330/karma-y-travis-ericconi)
 
 ## Requisitos
-
-
-![gif](/assets/images/ejemplo.gif)
-
 
 **Enlace al campus virtual**
 
