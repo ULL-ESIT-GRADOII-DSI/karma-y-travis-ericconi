@@ -1,42 +1,34 @@
 (function(exports) {
 "use strict";
-var medida_valor = new XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
+var medida_valor = '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
                         '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
                         '\\s*(?<tipo> ('                                                                     +
                         '[a-z]+                                                                              \n' +
-                        '))','xi');
+                        '))';
 
 function Medida(valor,tipo)  {
 
-
-   var verificar = XRegExp.exec(valor, medida_valor);
-
-  if(verificar){
-    this.valor = verificar.numero;
-    this.tipo = verificar.tipo;
-  }
-  else{
+  if(tipo){
     this.valor = valor;
     this.tipo = tipo;
-
   }
+  else{
+    var verificar = XRegExp.exec(valor, XRegExp(medida_valor,'xi'));
+    if(verificar){
+      this.valor = verificar.numero;
+      this.tipo = verificar.tipo;
+    }
+  }
+}
 
-};
-var x = new Medida("32F");
-var regexp = new XRegExp('^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)                                # NUMERO            \n' +
-                    '\\s*(?:e(?<exp> [-+]?\\d+))?                                           # EXPONENTE         \n' +
-                    '\\s*(?<tipo> ('                                                                     +
-                    '[a-z]+                                                                    \n' +
-                    '))                                                                     # FIN DEL TIPO      \n' +
-
-
+var regexp = 
                     '((?:\\s+to)?\\s+(?<destino> (                                               # TO                \n' +
                     '([a-z]+                                                                                  \n' +
-                    '))))\\s*$', 'xi');
+                    '))))\\s*$';
 
 Medida.match = function(valor){
-  return XRegExp.exec(valor, regexp);
-}
+  return XRegExp.exec(valor, XRegExp(medida_valor + regexp,'xi'));
+};
 
 Medida.measures = {};
 
@@ -52,6 +44,7 @@ Medida.measures = {};
 
       if (match.exp) {
          var exp = parseInt(match.exp);
+         console.log("Reconocido exponente");
          numero = numero * Math.pow(10, exp);
       }
 
@@ -61,6 +54,7 @@ Medida.measures = {};
         return source[target]().valor.toFixed(2) + " "+target; // "0 Celsius"
       }
       catch(err) {
+        console.error('Desconozco como convertir desde "'+tipo+'" hasta "'+destino+'"');
         return 'Desconozco como convertir desde "'+tipo+'" hasta "'+destino+'"';
       }
     }

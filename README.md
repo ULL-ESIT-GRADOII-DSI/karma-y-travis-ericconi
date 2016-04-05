@@ -1,24 +1,22 @@
-# Testeando frontend JavaScript usando mocha, chai y sinon
 
-Este repositorio aloja la práctica de Mocha y Chai el código que incluye conversión de tipos, realizado con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
-Y además un conjunto de puebas con mocha-chai.
 
-![gif](/assets/images/ejemplo.gif)
+## Práctica: Karma y Travis [![Build Status](https://travis-ci.org/alu0100786330/karma-y-travis-ericconi.svg?branch=master)](https://travis-ci.org/alu0100786330/karma-y-travis-ericconi)
 
+## Requisitos
 
 **Enlace al campus virtual**
 
-* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=182938)
+* [Enunciado] (https://campusvirtual.ull.es/1516/mod/page/view.php?id=185189)
 
 **Repositorio GitHuB donde se realizó la práctica**
 
-* [Donde se trabajó](https://github.com/alu0100786330/mocha-y-chai-ericconi)
-* [Organización](https://github.com/ULL-ESIT-GRADOII-DSI/mocha-y-chai-ericconi)
+* [Donde se trabajó](https://github.com/alu0100786330/karma-y-travis-ericconi)
+* [Organización](https://github.com/ULL-ESIT-GRADOII-DSI/karma-y-travis-ericconi)
 
 **Página de la práctica**
 
-* [Web](http://ull-esit-gradoii-dsi.github.io/mocha-y-chai-ericconi/)
-* [Pruebas](http://ull-esit-gradoii-dsi.github.io/mocha-y-chai-ericconi/vendor/test.html)
+* [Web](http://ull-esit-gradoii-dsi.github.io/karma-y-travis-ericconi/)
+
 
 **Página de los autor**
 
