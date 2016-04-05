@@ -8,17 +8,16 @@ var medida_valor = new XRegExp( '^\\s*(?<numero> [-+]?\\d+(?:\\.\\d*)?)         
 
 function Medida(valor,tipo)  {
 
-
-   var verificar = XRegExp.exec(valor, medida_valor);
-
-  if(verificar){
-    this.valor = verificar.numero;
-    this.tipo = verificar.tipo;
-  }
-  else{
+  if(tipo){
     this.valor = valor;
     this.tipo = tipo;
-
+  }
+  else{
+    var verificar = XRegExp.exec(valor, medida_valor);
+    if(verificar){
+      this.valor = verificar.numero;
+      this.tipo = verificar.tipo;
+    }
   }
 
 };
