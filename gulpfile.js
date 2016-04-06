@@ -34,9 +34,10 @@ gulp.task('clean', function () {
 	return gulp.src('minified/*', {read: false})
 		.pipe(clean());
 });
-gulp.task('tests', function(done) {
-  return karma.start({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done);
+
+var ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', function() {
+  return gulp.src('./minified/**/*')
+    .pipe(ghPages());
 });
