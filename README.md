@@ -16,7 +16,7 @@
 **Página de la práctica**
 
 * [Web](http://ull-esit-gradoii-dsi.github.io/karma-y-travis-ericconi/)
-
+* [Pruebas](http://ull-esit-gradoii-dsi.github.io/karma-y-travis-ericconi/vendor/test.html)
 
 **Página de los autor**
 
